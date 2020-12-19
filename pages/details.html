@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>ArtSneakers.id - Stay Hype</title>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="./style/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="./images/icon.ico" />
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light navbar-store fixed-top navbar-fixed-top"
+      data-aos="fade-down"
+    >
+      <div class="container">
+        <a href="/index.html" class="navbar-brand">
+          <img src="./images/logo.png" alt="logo" style="width: 68px" />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="/index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="/categories.html" class="nav-link">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Rewards</a>
+            </li>
+          </ul>
+
+          <!-- Desktop Menu -->
+          <ul class="navbar-nav d-none d-lg-flex">
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+              >
+                <img
+                  src="./images/user.svg"
+                  alt=""
+                  class="rounded-circle mr-2 profile-picture"
+                />
+                Hi, Hafiz
+              </a>
+              <div class="dropdown-menu">
+                <a href="/dashboard.html" class="dropdown-item">Dashboard</a>
+                <a href="/dashboard-account.html" class="dropdown-item"
+                  >Settings</a
+                >
+                <div class="dropdown-divider"></div>
+                <a href="/" class="dropdown-item">Logout</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link d-inline-block mt-2">
+                <img src="./images/cart-empty.svg" alt="" />
+              </a>
+            </li>
+          </ul>
+
+          <!-- mobile -->
+          <ul class="navbar-nav d-block d-lg-none">
+            <a href="#" class="nav-link">Hi, Hafiz</a>
+            <a href="#" class="nav-link d-inline-block">Cart</a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="page-content page-details">
+      <section
+        class="store-breadcrumbs"
+        data-aos="fade-down"
+        data-aos-delay="100"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <nav>
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="/index.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item active">Details</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="store-gallery" id="gallery">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8" data-aos="zoom-in">
+              <transition name="slide-fade" mode="out-in">
+                <img
+                  :src="photos[activePhoto].url"
+                  :key="photos[activePhoto].id"
+                  class="w-100 main-image"
+                  alt=""
+                />
+              </transition>
+            </div>
+            <div class="col-lg-2">
+              <div class="row">
+                <div
+                  class="col-3 col-lg-12 mt-2 mt-lg-0"
+                  v-for="(photo, index) in photos"
+                  :key="photo.id"
+                  data-aos="zoom-in"
+                  data-aos-delay="100"
+                >
+                  <a href="#" @click="changeActive(index)">
+                    <img
+                      :src="photo.url"
+                      class="w-100 thumbnail-image"
+                      :class="{ active: index == activePhoto }"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="store-details-container" data-aos="fade-up">
+        <section class="store-heading">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-7">
+                <h1>NIKE KYBRID S2 EP</h1>
+                <div class="owner">By ArtSneakers.id</div>
+                <div class="price">IDR 1,580,000</div>
+              </div>
+              <div class="col-lg-3" data-aos="zoom-in">
+                <label for="size">Size -US-</label>
+                <select class="form-control mb-4" id="size">
+                  <option class="disabled" disabled>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                  <option class="disabled" disabled>10.5</option>
+                  <option>11</option>
+                  <option>12</option>
+                  <option>13</option>
+                </select>
+                <a
+                  data-aos="zoom-in"
+                  data-aos-delay="200"
+                  class="btn btn-success nav-link px-4 text-white btn-block mb-3"
+                  href="/cart.html"
+                  >Add to Cart</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="store-description">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-6">
+                <p>
+                  A MASH-UP OF KYRIE'S SIGNATURE FOOTWEAR. The Kybrid S2
+                  combines the best of the Kyrie 4, 5 and 6 into one
+                  sensational, boundary-pushing basketball shoe. It provides a
+                  secure, lightweight fit with an overlay that locks you in when
+                  you lace up. A Kyrie-ready Zoom Air unit and traction that
+                  wraps up the sides help fast, quick-cutting players stay
+                  responsive and turn on their edges.This EP version uses an
+                  extra-durable outsole that's ideal for outdoor courts.
+                </p>
+
+                <p>
+                  Product Details <br />
+                  <li>
+                    Synthetic leather and textile materials in the upper Colour
+                  </li>
+                  <li>Shown: Multi-Colour/Multi-Colour Style: CT1971-900</li>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="section-footer mt-5 mb-4">
+      <div class="container pt-5 pb-5">
+        <div class="row text-centerr">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-12 col-lg-3">
+                <h5>FEATURES</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">Reviews</a></li>
+                  <li><a href="#">Community</a></li>
+                  <li><a href="#">Social Media</a></li>
+                  <li><a href="#">Affiliate</a></li>
+                </ul>
+              </div>
+
+              <div class="col-12 col-lg-3">
+                <h5>ACCOUNT</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">Refund</a></li>
+                  <li><a href="#">Security</a></li>
+                  <li><a href="#">Reward</a></li>
+                </ul>
+              </div>
+
+              <div class="col-12 col-lg-3">
+                <h5>COMPANY</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">Career</a></li>
+                  <li><a href="#">Help Center</a></li>
+                  <li><a href="#">Media</a></li>
+                </ul>
+              </div>
+
+              <div class="col-12 col-lg-3">
+                <h5>GET CONNECTED</h5>
+                <ul class="list-unstyled">
+                  <li>Jakarta Pusat</li>
+                  <li>Indonesia</li>
+                  <li><a href="#">0882-1192-1299</a></li>
+                  <li><a href="#">thebetawie@gmail.com</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid copy">
+        <div class="row border-top text-center pt-4">
+          <p class="col font-weight-light">
+            2020 Copyright ArtSneakersId &bull; All rights reserved &bull; Made
+            in Jakarta
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/vendor/jquery/jquery.slim.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="/vendor/vue/vue.js"></script>
+    <script>
+      var gallery = new Vue({
+        el: "#gallery",
+        mounted() {
+          AOS.init();
+        },
+        data: {
+          activePhoto: 0,
+          photos: [
+            {
+              id: 1,
+              url: "./images/details/produk1/detail-produk1.jpg",
+            },
+            {
+              id: 2,
+              url: "./images/details/produk1/detail-produk2.jpg",
+            },
+            {
+              id: 3,
+              url: "./images/details/produk1/detail-produk3.jpg",
+            },
+            {
+              id: 4,
+              url: "./images/details/produk1/detail-produk4.jpg",
+            },
+          ],
+        },
+        methods: {
+          changeActive(id) {
+            this.activePhoto = id;
+          },
+        },
+      });
+    </script>
+    <script src="./script/navbar.scroll.js"></script>
+  </body>
+</html>
